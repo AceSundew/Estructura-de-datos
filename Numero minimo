@@ -1,0 +1,29 @@
+#include<iostream>
+#include<conio.h>
+using namespace std;
+
+int encontrarMin(int x, int y);
+
+int main()
+{
+    int n1,n2;
+    int minimo;
+    cout<<"Digite 2 numeros:";
+    cin>>n1>>n2;
+    minimo = encontrarMin(n1,n2);
+    cout<<"El minimo de los dos numeros es:"<<minimo<<endl;
+    getch ();
+    return 0;
+}
+int encontrarMin(int x, int y )
+{
+    int numMin;
+    if (x<y)
+    {
+        numMin = x;
+    }
+    else{
+        numMin = y;
+    }
+    return numMin;
+}

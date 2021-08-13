@@ -1,0 +1,64 @@
+#include <iostream>
+#include <stdio.h>
+#include "conio.h"
+using namespace std;
+int main ()
+{
+    float a,b;
+    int opcion;
+    do{
+        cout<<endl<< "Menu"<<endl;
+        cout<<"1. Calcular el area de un triangulo"<<endl;
+        cout<<"2. Calcular el area de un rectangulo"<<endl;
+        cout<<"3. Calcular el area de un cuadrado"<<endl;
+        cout<<"4. Calcular el area de un circulo"<<endl;
+        cout<<"5. Encontrar el numero minimo entre dos numeros"<<endl;
+        cout<<"0. Salir"<<endl;
+        cout<<endl<<"Opcion:";
+        cin>>opcion;
+        switch(opcion)
+        {
+            case 1: cout<<"ingrese la base del triangulo:";
+            cin>>a;
+            cout<<"ingrese la altura del triangulo:";
+            cin>>b;
+            cout<<"Area del triangulo:"<<(a*b)/2<<endl;break;
+            case 2: cout<<"ingrese la base del rectangulo:";
+            cin>>a;
+            cout<<"ingrese la altura del rectangulo:";
+            cin>>b;
+            cout<<"Area del rectangulo:"<<a*b<<endl;break;
+            case 3: cout<<"ingrese un lado del cuadrado:";
+            cin>>a;
+             cout<<"Area del cuadrado:"<<a*a<<endl;break;
+            case 4: cout<<"ingrese el radio del circulo:";
+            cin>>a;
+            cout<<"Area del circulo:"<<3.14*a*a<<endl;break;
+            case 5: cout<<"Encontrar el numero minimo:";
+            int encontrarMin(int x, int y);
+            int n1,n2;
+            int minimo;
+            cout<<"Digite dos numeros:";
+            cin>>n1>>n2;
+            minimo = encontrarMin(n1,n2);
+            cout<<"el minimo de los dos numeros es:"<<minimo<<endl;
+            getch();
+            return 0;
+            case 0: cout<<"Salir:"<<endl;
+            default: cout<<"Error:"<<endl;
+        }
+    }while (opcion!=0);
+    getch();
+}
+int encontrarMin(int x, int y )
+{
+    int numMin;
+    if (x<y)
+    {
+        numMin = x;
+    }
+    else{
+        numMin = y;
+    }
+    return numMin;
+}

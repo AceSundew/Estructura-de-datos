@@ -1,0 +1,57 @@
+// Archivos.cpp : main project file.
+
+#include "stdafx.h"
+
+#include "StdAfx.h"
+#include <iostream>
+#include <fstream>
+#include <conio.h>
+#include "ABMamigo.cpp"
+
+using namespace std;
+
+
+void main() {
+ABMamigo *amig = new ABMamigo("amigOO.dat");
+	
+int opcion;
+    do{
+        cout<<endl<< "Menu"<<endl;
+        cout<<"1. Adicionar nuevo"<<endl;
+        cout<<"2. listar"<<endl;
+        cout<<"3. Buscar region"<<endl;
+        cout<<"4. Eliminar region"<<endl;
+        cout<<"5. Modificar region"<<endl;
+        cout<<"0. Salir"<<endl;
+        cout<<endl<<"Opcion:";
+        cin>>opcion;
+        switch(opcion)
+        {
+            case 1: cout<<"ingrese un amigo:";
+          	amig->adicionarNuevo();
+			break;
+        
+            case 2: cout<<"Listado";
+			amig->listar();
+			break;
+      
+            case 3: cout<<"Buscar ubicacion:";
+			amig->buscarReg();
+			break;
+        
+            case 4: cout<<"Eliminar ubicacion:";
+			amig->eliminarReg();
+			break;
+         
+            case 5: cout<<"Modificar ubicacion:";
+			amig->modificarReg();
+			break;
+           
+            return 0;
+            case 0: cout<<"Salir:"<<endl;
+            default: cout<<"Error:"<<endl;
+        }
+    }while (opcion!=0);
+    getch();
+}
+}
